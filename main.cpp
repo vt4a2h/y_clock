@@ -57,6 +57,8 @@ namespace y_clock {
 
 }
 
+#if !(defined NO_MAIN)
+
 int main(int argc, char **argv)
 {
     (void)argc;
@@ -73,7 +75,7 @@ int main(int argc, char **argv)
                 calclulator.calculate();
                 std::cout << calclulator.angleToString() << std::endl;
             } else {
-                throw std::logic_error("Time is not valid");
+                throw std::logic_error("time is not valid");
             }
         } catch (std::logic_error &e) {
             std::cout << "Logic error: " << e.what() << std::endl;
@@ -91,6 +93,8 @@ int main(int argc, char **argv)
                  "Example: \"10:33 PM\" deg quar" << std::endl;
     return -1;
 }
+
+#endif
 
 namespace y_clock {
 
